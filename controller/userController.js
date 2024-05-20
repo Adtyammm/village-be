@@ -1,35 +1,38 @@
+const { v4: uuidv4 } = require("uuid");
+
 const User = require("../models/user");
 const userModel = {};
 
-let lastUserId = 0;
-
 userModel.createUser = async (user) => {
   try {
-    lastUserId++;
-    user.user_id = lastUserId;
-
-    const newUser = await User.create(user);
+    const newUser = await User.create({
+      ...user,
+      user_id: uuidv4(), 
+    });
     return newUser;
   } catch (error) {
     throw new Error(error.message);
   }
 };
 
+
+
+
 userModel.updateUser = async (id, update) => {
   try {
-    const updatedUser = await User.findOneAndUpdate({ user_id: id }, update, {
+
+    let updateAccount = {
+      account_state: update.account_state || "Verified" || "Unverified",
+    };
+
+    const users = await User.findOneAndUpdate({ user_id: id }, updateAccount, {
       new: true,
     });
-    if (!updatedUser) {
-      throw new Error("User not found");
-    }
-    return updatedUser;
+    return users;
   } catch (error) {
     throw new Error(error.message);
   }
 };
-
-
 
 userModel.loginUser = async (nik, password) => {
   try {
@@ -39,7 +42,6 @@ userModel.loginUser = async (nik, password) => {
     throw new Error("Error during login: " + error.message);
   }
 };
-
 
 userModel.getAllUsers = async () => {
   try {
@@ -67,6 +69,5 @@ userModel.getUsersByUserId = async (userId) => {
     throw new Error(error.message);
   }
 };
-
 
 module.exports = userModel;
