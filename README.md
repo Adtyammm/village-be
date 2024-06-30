@@ -1,8 +1,7 @@
-Cara menjalankan Village-be 
+#Cara menjalankan Village-be 
 
-
-#  untuk menginstal semua dependensi yang tercantum dalam file package.json
-1. npm i
+  untuk menginstal semua dependensi yang tercantum dalam file package.json
+# npm i
 
 #   DARI NO 2 - 6 PASTIKAN ANDA BERADA DI DIRECTORY FOLDER FLASK
 #  untuk menginstal virtual envirement
