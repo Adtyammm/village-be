@@ -1,23 +1,23 @@
 #  Cara menjalankan Village-be 
 
   untuk menginstal semua dependensi yang tercantum dalam file package.json
-#  npm i
+  # 1. npm i
 
 #  DARI NO 2 - 6 PASTIKAN ANDA BERADA DI DIRECTORY FOLDER FLASK
    untuk menginstal virtual envirement
-#  python -m venv venv
+#  2. python -m venv venv
 
   untuk mengaktifkan virtual environment
-#  .\venv\Scripts\activate
+#  3. .\venv\Scripts\activate
 
   untuk menginstal semua paket python yang digunakan
-#  pip install flask torch transformers pandas scikit-learn
+#  4. pip install flask torch transformers pandas scikit-learn
 
   untuk membuat model yang akan digunakan 
-#  python train.py
+#  5. python train.py
 
   untuk menjalankan flask
-#  python app.py
+#  6. python app.py
 
   untuk menjalankan backend
-  #  nodemon index ( jika tidak bisa gunakan nodemon index.js)
+  #  7. nodemon index ( jika tidak bisa gunakan nodemon index.js)
