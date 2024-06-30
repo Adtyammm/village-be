@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 mongoose.set("strictQuery", false);
 
-var mongoURL = "mongodb+srv://kosarvillage:kosarvillage@cluster0.93sie2d.mongodb.net/hosting";
+var mongoURL =
+  "mongodb+srv://sismul:sismul@informatics.eqr6rhl.mongodb.net/sukamaju";
 
 mongoose.connect(mongoURL, { useUnifiedTopology: true, useNewUrlParser: true });
 

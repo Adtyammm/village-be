@@ -11,11 +11,8 @@ const reportingSchema = new mongoose.Schema(
     work_status: { type: String, required: true },
     reason: { type: String },
     vote: { type: Number },
-    user_id: {
-      type: String, 
-      required: true, 
-      ref: "User",
-    },
+    user_id: { type: String, required: true, ref: "User" },
+    sentiments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Sentiment" }],
   },
   { timestamps: true }
 );
